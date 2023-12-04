@@ -16,8 +16,6 @@ public class StudentTest {
     public void setup(){
     student =new Student(fristName,lastName,examScores);
     examScores = new ArrayList<>();
-     fristName = "john";
-     lastName = " Smith";
      examScores.add(100.0);examScores.add(95.0);examScores.add(123.0);
      examScores.add(96.0);
 
@@ -31,31 +29,31 @@ public class StudentTest {
     }
     @Test
     public void studentFirstNameTest(){
-
+        student.setFristName("max");
         String actual= student.getFristName();
-        String expect ="john";
+        String expect ="max";
         Assert.assertEquals(expect,actual);
     }
 
     @Test
     public void studentLastNameTest(){
-
+        student.setLastName("benie");
         String actual= student.getLastName();
-        String expect ="Smith";
+        String expect ="benie";
         Assert.assertEquals(expect,actual);
     }
     @Test
     public void studentExamScoresTest(){
 
-        String actual= student.getexamScore();
-        double[] expect ={100.0,95.0,123.0,96.0};
+       Double[] actual= student.getexamScores(examScores);
+        Double[] expect ={100.0,95.0,123.0,96.0};
         Assert.assertEquals(expect,actual);
     }
     @Test
     public void studentExamScoresAddTest(){
-        student.examScore.add(110.0);
+        student.examScores.add(110.0);
         double[] expect ={100.0,95.0,123.0,96.0,110.0};
-        double[]  actual= Student.getexamScore();
+        double[]  actual= student.getexamScores(examScores);
         Assert.assertEquals(expect,actual);
     }
 
@@ -64,27 +62,26 @@ public class StudentTest {
     public void studentExamScoresRemoveTest(){
 
 
-        student.examScore.remove(3);
+        student.examScores.remove(3);
         double[] expect ={100.0,95.0,123.0};
-        double[]  actual= student.getexamScore();
+        double[]  actual=student.getexamScores(examScores);
         Assert.assertEquals(expect,actual);
     }
     @Test
     public void studentExamScoresgetNumberOfExamsTaken(){
 
-
-
     Integer expect =4;
-       Integer  actual= student.getNumberOfExamsTaken();
-        Assert.assertEquals(expect,actual);
+    Integer actual= student.examScores.getNumberOfExamsTaken();
+    Assert.assertEquals(expect,actual);
     }
     @Test
     public void studentExamScoresSetExamScoreTest(){
 
-
-
-        Double expect = 100.0;
-        Double  actual= student.getExamsTest();
+        Integer examSpot = 2;
+        Double score = 250.0;
+        student.examScores.getExamsTest(examSpot,score);
+        Double[] expect ={100.0,250.0,123.0,96.0};
+        Double[] actual= student.getexamScores(examScores);
         Assert.assertEquals(expect,actual);
     }
 
@@ -94,7 +91,7 @@ public class StudentTest {
 
 
         Double expect = 100.0;
-        Double  actual= student.getAverageExamScore();
+        Double  actual= AverageExamScore(student.examScores);
         Assert.assertEquals(expect,actual);
     }
 
@@ -110,7 +107,7 @@ public class StudentTest {
         "Exam 2 -> " + student.examScores.postion(2) + "\n" +
         "Exam 3 -> " + student.examScores.postion(3) + "\n" +
         "Exam 4-> " + student.examScores.postion(4);
-       String  actual= student.toString();;
+       String  actual= student.toString();
         Assert.assertEquals(expect,actual);
     }
 
