@@ -31,9 +31,11 @@ public class Student {
 
     public Double[] getexamScores(ArrayList<Double> examScores) {
        Double[] arrayOfScores = new Double[examScores.size()]; // create a new array of the same size of the array list
-        //create a for loop to go through the arrList to add them to the new array
-        // then add them to the last position in the array.
-        // then return the new array.
+        int j =0;
+        for(int i = 0; i <= examScores.size()-1 ;i++) {//create a for loop to go through the arrList to add them to the new array
+            arrayOfScores[j++] = examScores.get(i);// then add them to the last position in the array.
+        }// then return the new array.
+        return arrayOfScores;
 
 
     }
