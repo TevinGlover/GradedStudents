@@ -67,23 +67,24 @@ public class StudentTest {
         Double[]  actual=student.getexamScores(examScores);
         Assert.assertEquals(expect,actual);
     }
-//    @Test
-//    public void studentExamScoresgetNumberOfExamsTaken(){
-//
-//    Integer expect =4;
-//    Integer actual= student.examScores.getNumberOfExamsTaken();
-//    Assert.assertEquals(expect,actual);
-//    }
-//    @Test
-//    public void studentExamScoresSetExamScoreTest(){
-//
-//        Integer examSpot = 2;
-//        Double score = 250.0;
-//        student.examScores.getExamsTest(examSpot,score);
-//        Double[] expect ={100.0,250.0,123.0,96.0};
-//        Double[] actual= student.getexamScores(examScores);
-//        Assert.assertEquals(expect,actual);
-//    }
+    @Test
+    public void studentExamScoresgetNumberOfExamsTaken(){
+
+    Integer expect =4;
+    Integer actual= student.getNumberOfExamsTaken(examScores);
+    Assert.assertEquals(expect,actual);
+    }
+
+    @Test
+    public void studentExamScoresSetExamScoreTest(){
+
+        Integer examSpot = 2;
+        Double score = 250.0;
+        student.getExamsTest(examScores,examSpot,score);
+        Double[] expect ={100.0,250.0,123.0,96.0};
+        Double[] actual=  student.getExamsTest(examScores,examSpot,score);
+        Assert.assertEquals(expect,actual);
+    }
 //
 //    @Test
 //    public void studentExamScoresAverageTest(){
