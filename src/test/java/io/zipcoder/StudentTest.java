@@ -14,10 +14,10 @@ public class StudentTest {
     Student student;
     @Before
     public void setup(){
-    student =new Student(firstName,lastName,examScores);
-    examScores = new ArrayList<>();
-     examScores.add(100.0);examScores.add(95.0);examScores.add(123.0);
-     examScores.add(96.0);
+        examScores = new ArrayList<>();
+        examScores.add(100.0);examScores.add(95.0);examScores.add(123.0);
+        examScores.add(96.0);
+        student =new Student(firstName,lastName,examScores);
 
     }
 
@@ -134,22 +134,22 @@ public class StudentTest {
         Assert.assertEquals(expect,actual);
     }
 
-//    @Test
-//    public void studentToStringTest(){
-//
-//
-//
-//        String expect = Student" Name: " + student.fristName  + "\n" +
-//		"> Average Score: " +student.examScores.getAverageExamScore() + "\n"+
-//               " > Exam Scores:" + "\n" +
-//        "Exam 1 -> " + student.examScores.postion(1) + "\n" +
-//        "Exam 2 -> " + student.examScores.postion(2) + "\n" +
-//        "Exam 3 -> " + student.examScores.postion(3) + "\n" +
-//        "Exam 4-> " + student.examScores.postion(4);
-//       String  actual= student.toString();
-//        Assert.assertEquals(expect,actual);
-//    }
-//
+    @Test
+    public void studentToStringTest(){
+
+        String expect =
+        " Name: " + student.firstName  + "\n" +
+		"> Average Score: " +student.averageExamScore(examScores,examScores.size()) + "\n"+
+        "> Exam Scores:" + "\n" +
+        "Exam 1 ->  " + student.getExamScoreAtpostion(examScores,0) + "\n" +
+        "Exam 2 ->  " + student.getExamScoreAtpostion(examScores,1) + "\n" +
+        "Exam 3 ->  " + student.getExamScoreAtpostion(examScores,2) + "\n" +
+        "Exam 4 ->  " + student.getExamScoreAtpostion(examScores,3);
+
+       String  actual= student.toString();
+        Assert.assertEquals(expect,actual);
+    }
+
 
 }
 

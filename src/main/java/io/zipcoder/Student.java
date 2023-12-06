@@ -74,6 +74,31 @@ public class Student {
             }
             return average;
 
+    }
+    public String getExamScoreAtpostion(ArrayList<Double> examScores, int i) {
+     Double examScoreAT = 0.0;
+
+             examScoreAT = examScores.get(i);
+
+       return examScoreAT.toString();
 
     }
+
+    @Override
+    public String toString(){
+
+     StringBuilder builder = new StringBuilder();
+             builder.append(
+                " Name: " + this.firstName + "\n" +
+                "> Average Score: " + this.averageExamScore(examScores,examScores.size()) + "\n" +
+                "> Exam Scores:" + "\n" +
+                "Exam 1 ->  " + this.getExamScoreAtpostion(examScores,0) + "\n" +
+                "Exam 2 ->  " + this.getExamScoreAtpostion(examScores,1) + "\n" +
+                "Exam 3 ->  " + this.getExamScoreAtpostion(examScores,2) + "\n" +
+                "Exam 4 ->  " + this.getExamScoreAtpostion(examScores,3));
+
+        return builder.toString();
+    }
+
+
 }
