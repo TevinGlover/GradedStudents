@@ -85,17 +85,55 @@ public class StudentTest {
         Double[] actual=  student.getExamsTest(examScores,examSpot,score);
         Assert.assertEquals(expect,actual);
     }
-//
-//    @Test
-//    public void studentExamScoresAverageTest(){
-//
-//
-//
-//        Double expect = 100.0;
-//        Double  actual= AverageExamScore(student.examScores);
-//        Assert.assertEquals(expect,actual);
-//    }
-//
+
+    @Test
+    public void studentExamScoresAverageTest(){
+
+
+        Double expect = 103.5;
+        Double  actual= student.averageExamScore(examScores, examScores.size());
+        Assert.assertEquals(expect,actual);
+    }
+
+
+    @Test
+    public void studentExamScoresAverageIFScoreIsZeroTest(){
+        Integer examSpot3 = 3;
+        Double score3 = - 50.0;
+        student.getExamsTest(examScores,examSpot3,score3);
+        Integer examSpot2 = 2;
+        Double score2 =  -5.0;
+        student.getExamsTest(examScores,examSpot2,score2);
+        Integer examSpot1 = 1;
+        Double score1 = -60.0;
+        student.getExamsTest(examScores,examSpot1,score1);
+        Integer examSpot0 = 0;
+        Double score = 0.0;
+        student.getExamsTest(examScores,examSpot0,score);
+        Double expect = 0.0;
+        Double  actual= student.averageExamScore(examScores, examScores.size());
+        Assert.assertEquals(expect,actual);
+    }
+
+    @Test
+    public void studentExamScoresAverageIFScoreIsLessThenZeroTest(){
+        Integer examSpot3 = 3;
+        Double score = 0.0;
+        student.getExamsTest(examScores,examSpot3,score);
+        Integer examSpot2 = 2;
+        Double score1 = 0.0;
+        student.getExamsTest(examScores,examSpot2,score1);
+        Integer examSpot1 = 1;
+        Double score2 = 0.0;
+        student.getExamsTest(examScores,examSpot1,score2);
+        Integer examSpot0 = 0;
+        Double score3 = 0.0;
+        student.getExamsTest(examScores,examSpot0,score3);
+        Double expect = 0.0;
+        Double  actual= student.averageExamScore(examScores, examScores.size());
+        Assert.assertEquals(expect,actual);
+    }
+
 //    @Test
 //    public void studentToStringTest(){
 //

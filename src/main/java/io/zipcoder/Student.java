@@ -62,4 +62,18 @@ public class Student {
         return arrayS;  // then return it as a double[].
     }
 
+    public Double averageExamScore(ArrayList<Double> examScores, int size) {
+        Double totalScore = 0.0;
+        Double average = 0.0;
+        for (Double score : examScores) { // you want to add to the total of totalScore
+            totalScore += score;
+        }
+            average = totalScore / size;
+            if (average < 0.0) {// this changes native score to 0.0
+                average = 0.0;
+            }
+            return average;
+
+
+    }
 }
