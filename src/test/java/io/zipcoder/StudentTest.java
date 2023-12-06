@@ -9,12 +9,12 @@ import java.util.ArrayList;
 
 public class StudentTest {
     ArrayList<Double> examScores;
-    String fristName;
+    String firstName;
     String lastName;
     Student student;
     @Before
     public void setup(){
-    student =new Student(fristName,lastName,examScores);
+    student =new Student(firstName,lastName,examScores);
     examScores = new ArrayList<>();
      examScores.add(100.0);examScores.add(95.0);examScores.add(123.0);
      examScores.add(96.0);
@@ -29,8 +29,8 @@ public class StudentTest {
     }
     @Test
     public void studentFirstNameTest(){
-        student.setFristName("max");
-        String actual= student.getFristName();
+        student.setFirstName("max");
+        String actual= student.getFirstName();
         String expect ="max";
         Assert.assertEquals(expect,actual);
     }
@@ -45,7 +45,7 @@ public class StudentTest {
     @Test
     public void studentExamScoresTest(){
 
-       Double[] actual= student.getexamScores(examScores);
+       Double[] actual= student.getExamScores(examScores);
         Double[] expect ={100.0,95.0,123.0,96.0};
         Assert.assertEquals(expect,actual);
     }
@@ -53,7 +53,7 @@ public class StudentTest {
     public void studentExamScoresAddTest(){
        examScores.add(110.0);
         Double[] expect ={100.0,95.0,123.0,96.0,110.0};
-        Double[]  actual= student.getexamScores(examScores);
+        Double[]  actual= student.getExamScores(examScores);
         Assert.assertEquals(expect,actual);
     }
 
@@ -64,7 +64,7 @@ public class StudentTest {
 
         examScores.remove(3);
         Double[] expect ={100.0,95.0,123.0};
-        Double[]  actual=student.getexamScores(examScores);
+        Double[]  actual=student.getExamScores(examScores);
         Assert.assertEquals(expect,actual);
     }
     @Test
@@ -78,7 +78,7 @@ public class StudentTest {
     @Test
     public void studentExamScoresSetExamScoreTest(){
 
-        Integer examSpot = 2;
+        Integer examSpot = 1;
         Double score = 250.0;
         student.getExamsTest(examScores,examSpot,score);
         Double[] expect ={100.0,250.0,123.0,96.0};

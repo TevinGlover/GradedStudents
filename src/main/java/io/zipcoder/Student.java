@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Student {
     ArrayList<Double> examScores;
-    String fristName;
+    String firstName;
     String lastName;
 
-    public Student(String fristName, String lastName, ArrayList<Double> examScores) {
+    public Student(String firstName, String lastName, ArrayList<Double> examScores) {
         this.examScores = examScores;
         this.lastName = lastName;
-        this.fristName = fristName;
+        this.firstName = firstName;
     }
 
 
-    public void setFristName(String fristName) {
-        this.fristName = fristName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getFristName() {
-        return fristName;
+    public String getFirstName() {
+        return firstName;
     }
 
     public void setLastName(String lastName) {
@@ -32,7 +32,7 @@ public class Student {
     }
 
 
-    public Double[] getexamScores(ArrayList<Double> examScores) {
+    public Double[] getExamScores(ArrayList<Double> examScores) {
         Double[] arrayOfScores = new Double[examScores.size()]; // create a new array of the same size of the array list
         int j = 0;
         for (int i = 0; i <= examScores.size() - 1; i++) {//create a for loop to go through the arrList to add them to the new array
@@ -56,10 +56,10 @@ public class Student {
         return amountOfExams;
     }
 
-   // public Double[] getExamsTest(ArrayList<Double> examScores, Integer examSpot, Double score) {
-        // i want to take a array and then.
-        // replace a double with another score.
-        // then return it as a double[].
-   // }
+    public Double[] getExamsTest(ArrayList<Double> examScores, Integer examSpot, Double score) {
+        examScores.set(examSpot, score); // i want to take a arraylist and then.
+        Double[] arrayS = getExamScores(examScores);//replace a double with another score.
+        return arrayS;  // then return it as a double[].
+    }
 
 }
