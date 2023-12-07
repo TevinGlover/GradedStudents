@@ -135,7 +135,7 @@ public class StudentTest {
     }
 
     @Test
-    public void studentToStringTest(){
+    public void studentToStringTest(){// thanks tam !!! finding OUT NULL
 
         String expect =
         " Name: " + student.firstName  + "\n" +
