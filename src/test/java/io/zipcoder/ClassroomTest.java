@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class ClassroomTest {
@@ -65,20 +66,68 @@ public void classNullaryConstructorTest() {
         Assert.assertNotNull(classroom);
     }
     @Test
-    public void getStudenttest(){
-        ArrayList<Double> examScores2 = null;
-        ArrayList<Double> examScores1 = null;
-        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
-        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
+    public void getStudentsTest(){
+        ArrayList<Double> examScores2 = new ArrayList<>();
+        ArrayList<Double> examScores1 = new ArrayList<>();
     Student student1 = new Student("timlee", "glee", examScores2 );
         Student student = new Student("tim", "flee", examScores1 );
-         Student[] students = new Student[]{student,student1};
-        Classroom classroom = new Classroom(students);
-        Student expected = student;
-        Student actual = classroom.getStudent(student);
-        Assert.assertEquals(actual, expected);
-    }
+        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
+        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
+         Student[] studentsImTheClass = new Student[]{student,student1};
+        Classroom classroom = new Classroom(studentsImTheClass);
 
+
+        String expected = Arrays.toString(studentsImTheClass);
+        String actual = classroom.getStudents();
+        Assert.assertEquals(expected,actual);
+    }
+//    public void getStudentExamAverageTest(){
+//        ArrayList<Double> examScores2 = null;
+//        ArrayList<Double> examScores1 = null;
+//        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
+//        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
+//        Student student1 = new Student("timlee", "glee", examScores2 );
+//        Student student = new Student("tim", "flee", examScores1 );
+//        Student[] students = new Student[]{student,student1};
+//        Classroom classroom = new Classroom(students);
+//
+//
+//        Double expected = student.averageExamScore(examScores1,examScores1.size());
+//        Double actual = classroom.getStudentExamAverage();
+//        Assert.assertEquals(actual, expected);
+//    }
+
+   // @Test
+//    public void addStudentTest(){
+//        ArrayList<Double> examScores3 = null;
+//         int maxNumberOfStudents = 1;
+//        examScores3.add(150.0); examScores3.add(120.0); examScores3.add(120.0);examScores3.add(125.0);
+//
+//        Student studentNew = new Student("pim", "lee", examScores3 );
+//        Student[] studentsImTheClass = new Student[maxNumberOfStudents];
+//        Classroom classroom = new Classroom(studentsImTheClass);
+//
+//
+//        classroom.addStudent(studentNew);
+//       String expected = studentNew.toString();
+//        String actual = classroom.toString();
+//        Assert.assertEquals(actual, expected);
+//    }
+//    public void getStudentExamAverageTest(){
+//        ArrayList<Double> examScores2 = null;
+//        ArrayList<Double> examScores1 = null;
+//        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
+//        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
+//        Student student1 = new Student("timlee", "glee", examScores2 );
+//        Student student = new Student("tim", "flee", examScores1 );
+//        Student[] students = new Student[]{student,student1};
+//        Classroom classroom = new Classroom(students);
+//
+//
+//        Double expected = student.averageExamScore(examScores1,examScores1.size());
+//        Double actual = classroom.getStudentExamAverage();
+//        Assert.assertEquals(actual, expected);
+//    }
 //    @Test
 //    public void classSizeTest() {
 //        int expected = studentsArray.length;
@@ -87,11 +136,6 @@ public void classNullaryConstructorTest() {
 //        Assert.assertEquals(actual, expected);
 //
 //    }
-//    @Test
-//    public void setStudentsArrayTest() {
 //
-//        Assert.assertNotNull(studentsArray);
-//
-//    }
 
 }
