@@ -95,21 +95,22 @@ public void classNullaryConstructorTest() {
         String actual = classroom.getStudents();
         Assert.assertEquals(expected,actual);
     }
-//    public void getStudentExamAverageTest(){
-//        ArrayList<Double> examScores2 = null;
-//        ArrayList<Double> examScores1 = null;
-//        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
-//        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
-//        Student student1 = new Student("timlee", "glee", examScores2 );
-//        Student student = new Student("tim", "flee", examScores1 );
-//        Student[] students = new Student[]{student,student1};
-//        Classroom classroom = new Classroom(students);
-//
-//
-//        Double expected = student.averageExamScore(examScores1,examScores1.size());
-//        Double actual = classroom.getStudentExamAverage();
-//        Assert.assertEquals(actual, expected);
-//    }
+    public void getStudentsExamAveragesTest(){
+        ArrayList<Double> examScores2 = null;
+        ArrayList<Double> examScores1 = null;
+        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
+        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
+        Student student1 = new Student("timlee", "glee", examScores2 );
+        Student student = new Student("tim", "flee", examScores1 );
+        Student[] students = new Student[]{student,student1};
+        Classroom classroom = new Classroom(students);
+
+        // add all number in both arrays and dived by the amount.
+
+        Double expected = 68.75;
+        Double actual = classroom.getStudentsExamAverages();
+        Assert.assertEquals(actual, expected);
+    }
 
    // @Test
 //    public void addStudentTest(){

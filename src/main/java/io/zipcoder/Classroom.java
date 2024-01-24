@@ -29,4 +29,13 @@ public class Classroom {
         return s1 ;
     }
 
+    public Double getStudentsExamAverages() {
+
+        //  i want to take the students in the class
+        // and then make it loop through the student's grades
+        // and add the grades to gather and have a counter to cont how many times it goose throw the
+        // the loop. and then divied the sum by the amount of time it loops through.
+//        return average;
+        return null;
+    }
 }
