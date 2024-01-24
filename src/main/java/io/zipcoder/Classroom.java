@@ -30,21 +30,31 @@ public class Classroom {
     }
 
     public Double getStudentsExamAverages() {
-        ArrayList<Double> classGrades = new ArrayList<Double>();
-
-        int infoNum = 0;
-        for (int i = 0; i < this.studentsArray.length ; i++) {
-            if (this.studentsArray[i] != null) {
-                classGrades.add(this.studentsArray[i].examScores.get(i));
-                infoNum++;
-                System.out.println(classGrades);
-            }
-        }
         //  i want to take the students in the class
         // and then make it loop through the student's grades
         // and add the grades to gather and have a counter to cont how many times it goose throw the
         // the loop. and then divied the sum by the amount of time it loops through.
 //        return average;
-        return null;
+        ArrayList<Double> classGrades = new ArrayList<Double>();
+        int infoNum = 0; // the amount of test score in arrlist
+        double total = 0;
+
+        for (int i = 0; i < this.studentsArray.length ; i++) {
+            if (this.studentsArray[i] != null) {
+                for (int j = 0; j < this.studentsArray[i].examScores.size() ; j++) {
+                    infoNum++;
+                    total += this.studentsArray[i].examScores.get(j);
+                    classGrades.add(this.studentsArray[i].examScores.get(j));
+
+                }
+
+//                System.out.println(total);
+//                System.out.println(infoNum);
+//                System.out.println(classGrades);
+            }
+        }
+        Double classAverage = total / infoNum;
+//        System.out.println(classAverage);
+        return classAverage;
     }
 }

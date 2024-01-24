@@ -97,8 +97,8 @@ public void classNullaryConstructorTest() {
     }
     @Test
     public void getStudentsExamAveragesTest(){
-        ArrayList<Double> examScores2 = null;
-        ArrayList<Double> examScores1 = null;
+        ArrayList<Double> examScores2 = new ArrayList<>();
+        ArrayList<Double> examScores1 = new ArrayList<>();
         examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
         examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
         Student student1 = new Student("timlee", "glee", examScores2 );
@@ -110,7 +110,7 @@ public void classNullaryConstructorTest() {
 
         Double expected = 68.75;
         Double actual = classroom.getStudentsExamAverages();
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals( expected,actual);
     }
 
    // @Test
