@@ -95,6 +95,7 @@ public void classNullaryConstructorTest() {
         String actual = classroom.getStudents();
         Assert.assertEquals(expected,actual);
     }
+    @Test
     public void getStudentsExamAveragesTest(){
         ArrayList<Double> examScores2 = null;
         ArrayList<Double> examScores1 = null;

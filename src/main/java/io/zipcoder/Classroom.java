@@ -1,5 +1,6 @@
 package io.zipcoder;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Classroom {
@@ -20,7 +21,6 @@ public class Classroom {
 
     public String getStudents() {
         String s1 = "";
-        int infoNum = 0;
         for (int i = 0; i < this.studentsArray.length ; i++) {
             if(this.studentsArray[i] != null ) {
                 s1 += this.studentsArray[i].toString() + " \n";
@@ -30,7 +30,16 @@ public class Classroom {
     }
 
     public Double getStudentsExamAverages() {
+        ArrayList<Double> classGrades = new ArrayList<Double>();
 
+        int infoNum = 0;
+        for (int i = 0; i < this.studentsArray.length ; i++) {
+            if (this.studentsArray[i] != null) {
+                classGrades.add(this.studentsArray[i].examScores.get(i));
+                infoNum++;
+                System.out.println(classGrades);
+            }
+        }
         //  i want to take the students in the class
         // and then make it loop through the student's grades
         // and add the grades to gather and have a counter to cont how many times it goose throw the
