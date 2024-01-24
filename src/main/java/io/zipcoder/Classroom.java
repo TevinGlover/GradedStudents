@@ -20,10 +20,11 @@ public class Classroom {
 
     public String getStudents() {
         String s1 = "";
-        for (Student s : Arrays.asList(studentsArray)) {
-            assert s != null;
-            s1 = s.toString() + " \n";
-
+        int infoNum = 0;
+        for (int i = 0; i < this.studentsArray.length ; i++) {
+            if(this.studentsArray[i] != null ) {
+                s1 += this.studentsArray[i].toString() + " \n";
+            }
             }
         return s1 ;
     }

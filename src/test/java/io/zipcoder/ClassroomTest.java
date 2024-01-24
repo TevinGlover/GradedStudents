@@ -77,7 +77,21 @@ public void classNullaryConstructorTest() {
         Classroom classroom = new Classroom(studentsImTheClass);
 
 
-        String expected = Arrays.toString(studentsImTheClass);
+//        String expected = Arrays.toString(studentsImTheClass);
+        String expected = " Name: tim\n" +
+                "> Average Score: 52.5\n" +
+                "> Exam Scores:\n" +
+                "Exam 1 ->  190.0\n" +
+                "Exam 2 ->  80.0\n" +
+                "Exam 3 ->  -60.0\n" +
+                "Exam 4 ->  0.0 \n" +
+                " Name: timlee\n" +
+                "> Average Score: 85.0\n" +
+                "> Exam Scores:\n" +
+                "Exam 1 ->  100.0\n" +
+                "Exam 2 ->  180.0\n" +
+                "Exam 3 ->  60.0\n" +
+                "Exam 4 ->  0.0 \n";
         String actual = classroom.getStudents();
         Assert.assertEquals(expected,actual);
     }
