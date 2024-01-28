@@ -113,22 +113,22 @@ public void classNullaryConstructorTest() {
         Assert.assertEquals( expected,actual);
     }
 
-   // @Test
-//    public void addStudentTest(){
-//        ArrayList<Double> examScores3 = null;
-//         int maxNumberOfStudents = 1;
-//        examScores3.add(150.0); examScores3.add(120.0); examScores3.add(120.0);examScores3.add(125.0);
-//
-//        Student studentNew = new Student("pim", "lee", examScores3 );
-//        Student[] studentsImTheClass = new Student[maxNumberOfStudents];
-//        Classroom classroom = new Classroom(studentsImTheClass);
-//
-//
-//        classroom.addStudent(studentNew);
-//       String expected = studentNew.toString();
-//        String actual = classroom.toString();
-//        Assert.assertEquals(actual, expected);
-//    }
+    @Test
+    public void addStudentTest(){
+        ArrayList<Double> examScores3 = new ArrayList<>();
+         int maxNumberOfStudents = 1;
+        examScores3.add(150.0); examScores3.add(120.0); examScores3.add(120.0);examScores3.add(125.0);
+
+        Student studentNew = new Student("pim", "lee", examScores3 );
+        Student[] studentsImTheClass = new Student[maxNumberOfStudents];
+        Classroom classroom = new Classroom(studentsImTheClass);
+
+
+        classroom.addStudent(studentNew);
+       String expected = classroom.getStudents();
+        String actual = studentNew + " "+ "\n";
+        Assert.assertEquals( expected, actual);
+    }
 //    public void getStudentExamAverageTest(){
 //        ArrayList<Double> examScores2 = null;
 //        ArrayList<Double> examScores1 = null;

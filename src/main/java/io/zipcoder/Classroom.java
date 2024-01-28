@@ -21,12 +21,12 @@ public class Classroom {
 
     public String getStudents() {
         String s1 = "";
-        for (int i = 0; i < this.studentsArray.length ; i++) {
-            if(this.studentsArray[i] != null ) {
+        for (int i = 0; i < this.studentsArray.length; i++) {
+            if (this.studentsArray[i] != null) {
                 s1 += this.studentsArray[i].toString() + " \n";
             }
-            }
-        return s1 ;
+        }
+        return s1;
     }
 
     public Double getStudentsExamAverages() {
@@ -39,9 +39,9 @@ public class Classroom {
         int infoNum = 0; // the amount of test score in arrlist
         double total = 0;
 
-        for (int i = 0; i < this.studentsArray.length ; i++) {
+        for (int i = 0; i < this.studentsArray.length; i++) {
             if (this.studentsArray[i] != null) {
-                for (int j = 0; j < this.studentsArray[i].examScores.size() ; j++) {
+                for (int j = 0; j < this.studentsArray[i].examScores.size(); j++) {
                     infoNum++;
                     total += this.studentsArray[i].examScores.get(j);
                     classGrades.add(this.studentsArray[i].examScores.get(j));
@@ -56,5 +56,11 @@ public class Classroom {
         Double classAverage = total / infoNum;
 //        System.out.println(classAverage);
         return classAverage;
+    }
+
+    public void addStudent(Student studentNew) {
+        // create a if and statement. if class is not full, add a student . if full return is not able to.
+        this.studentsArray = new Student[]{studentNew};
+
     }
 }
