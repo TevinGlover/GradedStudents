@@ -59,8 +59,20 @@ public class Classroom {
     }
 
     public void addStudent(Student studentNew) {
-        // create a if and statement. if class is not full, add a student . if full return is not able to.
-        this.studentsArray = new Student[]{studentNew};
+        // create a if and statement. if class is not full, add a student. if full return is not able to.
+       if ( this.studentsArray.length <= 30){
+           int studentPlacementInClass = this.studentsArray.length-1;
+           this.studentsArray[studentPlacementInClass] = studentNew;
+       }
+    }
 
+    public int currentClassSize() {
+        int size = 0;
+        for (int i = 0; i < this.studentsArray.length; i++) {
+            if( this.studentsArray[i] != null){
+                size++;
+            }
+
+        }return size;
     }
 }
