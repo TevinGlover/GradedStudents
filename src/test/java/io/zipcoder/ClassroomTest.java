@@ -114,44 +114,35 @@ public void classNullaryConstructorTest() {
     }
 
     @Test
-    public void addStudentTest(){
+    public void addStudentTest() {
         ArrayList<Double> examScores3 = new ArrayList<>();
-         int maxNumberOfStudents = 30;
-        examScores3.add(150.0); examScores3.add(120.0); examScores3.add(120.0);examScores3.add(125.0);
+        int maxNumberOfStudents = 30;
+        examScores3.add(150.0);
+        examScores3.add(120.0);
+        examScores3.add(120.0);
+        examScores3.add(125.0);
 
-        Student studentNew = new Student("pim", "lee", examScores3 );
+        Student studentNew = new Student("pim", "lee", examScores3);
         Student[] studentsImTheClass = new Student[maxNumberOfStudents];
         Classroom classroom = new Classroom(studentsImTheClass);
 
 
         classroom.addStudent(studentNew);
-       int expected = 1;
+        int expected = 1;
         int actual = classroom.currentClassSize();
-        Assert.assertEquals( expected, actual);
+        Assert.assertEquals(expected, actual);
     }
-//    public void getStudentExamAverageTest(){
-//        ArrayList<Double> examScores2 = null;
-//        ArrayList<Double> examScores1 = null;
-//        examScores2.add(100.0); examScores2.add(180.0); examScores2.add(60.0);examScores2.add(0.0);
-//        examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
-//        Student student1 = new Student("timlee", "glee", examScores2 );
-//        Student student = new Student("tim", "flee", examScores1 );
-//        Student[] students = new Student[]{student,student1};
-//        Classroom classroom = new Classroom(students);
-//
-//
-//        Double expected = student.averageExamScore(examScores1,examScores1.size());
-//        Double actual = classroom.getStudentExamAverage();
-//        Assert.assertEquals(actual, expected);
-//    }
-//    @Test
-//    public void classSizeTest() {
-//        int expected = studentsArray.length;
-//        int actual =  Classroom.getClassSize();
-//
-//        Assert.assertEquals(actual, expected);
-//
-//    }
-//
+    @Test
+    public void classSizeTest() {
+        Classroom classroom= new Classroom();
+
+        int expected = 0;
+        int actual =  classroom.currentClassSize();
+
+        Assert.assertNotNull(classroom);
+        Assert.assertEquals(actual, expected);
+
+    }
+
 
 }
