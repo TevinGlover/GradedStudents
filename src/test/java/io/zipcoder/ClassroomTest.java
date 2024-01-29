@@ -145,35 +145,62 @@ public void classNullaryConstructorTest() {
     }
 
   /** Define method removeStudent(String firstName, String lastName)
-    The class Classroom should define a method which uses a firstName and lastName parameter to identify and remove the respective student from composite students object.
+    The class Classroom should define a method which uses a firstName and lastName parameter to identify and remove
+    the respective student from composite students object.
     Ensure the array is re-ordered after the removal; Null values should be located in the final indices of the array.
 **/
 
   @Test
     public void removeStudentTest(){
+      ArrayList<Double>  examScores3 = new ArrayList<>();
+      ArrayList<Double> examScores2 = new ArrayList<>();
+      ArrayList<Double>  examScores1 = new ArrayList<>();
+      ArrayList<Double>  examScores = new ArrayList<>();
+    examScores3.add(100.0); examScores3.add(100.0); examScores3.add(100.0);examScores3.add(100.0);
+    examScores2.add(0.0); examScores2.add(60.0); examScores2.add(90.0);examScores2.add(0.0);
+    examScores1.add(190.0); examScores1.add(80.0); examScores1.add(-60.0);examScores1.add(0.0);
+    examScores.add(100.0); examScores.add(200.0); examScores.add(90.0);examScores.add(0.0);
+
+      Student student0 = new Student("alix","beckon", examScores);
+      Student student1 = new Student("bob","Sellyby", examScores1);
+      Student student2 = new Student("Chad","Ford", examScores2);
+      Student student3 = new Student("Sofie","Laranton", examScores3);
+      Student[] studentsArray = new Student[]{student0, student1, student2, student3};
+
+      Classroom classroom = new Classroom(studentsArray);
+      // GIVEN
+
+      //WHEN
+      classroom.removeStudent( "Sofie", "Laranton");
+      int expected = 3;
+      int actual =  classroom.currentClassSize();
+      //THEN
+      Assert.assertEquals(actual, expected);
 
   }
 
 
 
-/**    Define method getStudentsByScore()
-  The class Classroom should define a method getStudentsByScore() which returns an array representation of Student objects sorted in descending order by score.
-    If two students have the same class average, order them lexigraphically.
-**/
+///**    Define method getStudentsByScore()
+//  The class Classroom should define a method getStudentsByScore() which returns an array representation of Student
+//  objects sorted in descending order by score.
+//  If two students have the same class average, order them lexigraphically.
+//**/
 
 //@Test
 //public void getStudentsByScoreTest(){
 //
 //}
 
-/**    Define method getGradeBook()
-    The class Classroom should define a method getGradeBook() which returns a mapping of Student objects to a respective letter grade determined by creating a grading curve such that
-    An A is awarded to students whose class average is in the upper 10th percentile.
-    A B is awarded to students whose class average falls between the upper 11th and 29th percentile.
-    A C is awarded to students whose class average falls between the upper 30th and 50th percentile.
-    A D is awarded to students whose class average falls between the lower 51st and 89th percentile.
-    An F is awarded to students whose class average is in the lower 11th percentile.
-**/
+///**    Define method getGradeBook()
+  //  The class Classroom should define a method getGradeBook() which returns a mapping of Student objects to a
+  //  respective letter grade determined by creating a grading curve such that.
+    //An A is awarded to students whose class average is in the upper 10th percentile.
+//    A B is awarded to students whose class average falls between the upper 11th and 29th percentile.
+//    A C is awarded to students whose class average falls between the upper 30th and 50th percentile.
+//    A D is awarded to students whose class average falls between the lower 51st and 89th percentile.
+//    An F is awarded to students whose class average is in the lower 11th percentile.
+// **/
 //@Test
 //public void getGradeBookTest(){
 //

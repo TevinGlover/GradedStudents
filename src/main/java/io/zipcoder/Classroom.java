@@ -75,4 +75,11 @@ public class Classroom {
 
         }return size;
     }
+
+    public void removeStudent(String firstName, String lastName) {
+        // i want to go through the array of students in a class
+        // and find the string1 and 2 that match
+        // then remove them from the list
+        // add all the names back into the array resized.
+    }
 }
